@@ -123,8 +123,13 @@
 <script>
   "use strict";
   // code here for above-problem
-  // var changeMessage = document.getElementById("message-to-change");
-  // changeText.innerHTML = "Goodbye";
+  var changeWord = document.getElementById("message-to-change");
+  var helloGoodbyeButton = document.getElementById("change-hello-to-goodbye-button");
+  function goodbye(evt) {
+    changeWord.innerHTML = "Goodbye";
+  };
+  helloGoodbyeButton.addEventListener('click', goodbye);
+
 </script>
 
 <div class="hint">
@@ -208,6 +213,18 @@
 
 //  var button = document.getElementById('reverse-string-button');
 //  button.addEventListener('click', reverseString);
+
+  function reverseString() {
+    var msg = "Porcupines are cute";
+    var newMsg = " ";
+    for (var i = msg.length - 1; i >= 0; i--) {
+      newMsg += msg[i];
+    }
+    alert(newMsg);
+  }
+  var button = document.getElementById('reverse-string-button');
+  button.addEventListener('click', reverseString);
+
 </script>
 
 
@@ -219,8 +236,6 @@
 <p>You should use jQuery for these parts.</p>
 <p>We didn't include jQuery in this document, though&mdash;so your first task is to include it!</p>
 
-
-
 <h3>Finding the Button</h3>
 <p>
   When you click this button, pop up an alert box. <b>Remember, you cannot change the HTML!</b>
@@ -230,9 +245,16 @@
   <input type="button" class="tricky-to-find" value="Pop-Up Please!">
 </fieldset>
 
+<script src="https://code.jquery.com/jquery.js"></script>
+
 <script>
   "use strict";
   // code here for above problem
+  function alertMe(evt) {
+    alert("I'm a banana!");
+  }
+  $('.tricky-to-find').on('click', alertMe);
+
 </script>
 
 <div class="hint">
@@ -261,6 +283,12 @@
 <script>
   "use strict";
   // put your code here
+  function catToDog(evt) {
+    var height = $("#kittenz-rule").height();
+  $("#kittenz-rule").attr("src", "http://scontent.cdninstagram.com/t51.2885-15/s480x480/e35/c236.0.607.607/14294898_1117202728365930_648779262_n.jpg?ig_cache_key=MTM0MjMyOTM5NTExNzI1MzgyMw%3D%3D.2.c").height(height);
+  }
+  $("#kittenz-rule").on ('dblclick', catToDog);
+
 </script>
 
 <div class="hint">
@@ -295,6 +323,12 @@
 <script>
   "use strict";
   // put your code here
+  function revealPorcupine(evt) {
+    setTimeout(function() {
+      $("#cute-porcupine-image").slideDown(6000);
+    }, 1000);
+  }
+  $("#make-a-porcupine").on('click', revealPorcupine);
 </script>
 
 <div class="hint">
